@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML, CSS and JS</title>
+        <style>
+          .add-to-cart {
+            background-color: yellow;
+            border: none;
+            color: black;
+            padding: 10px 50px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 20px;
+            margin-bottom: 20px;
+          }
+
+          .request-now {
+            background-color: black;
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 10px;
+            margin-bottom: 20px;
+          }
+
+          .schedule-for-later {
+            background-color: rgb(230, 230, 230);
+            border: none;
+            color: black;
+            padding: 15px 30px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 10px;
+            margin-bottom: 20px;
+          }
+
+          .toggle-button {
+            background-color: rgb(230, 230, 230);
+            border: none;
+            color: black;
+            padding: 15px 15px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 10px;
+            margin-bottom: 20px;
+          }
+
+          .is-toggled {
+            background-color: black;
+            color: white;
+          }
+        </style>
+    </head>
+    <body>
+      <button class="add-to-cart">Add to Cart</button>
+
+      <button class="request-now">Request now</button>
+      <button class="schedule-for-later">Schedule for later</button>
+      <br>
+      <button class="js-button">Test</button>
+      <br>
+
+      <button onClick="handleIstoggle()" class="toggle-button js-toggle-button">Gaming</button>
+
+      <script>
+        const buttonElement = document.querySelector('.js-button');
+        console.log(buttonElement.classList.contains('js-button'));
+
+        function handleIstoggle() {
+          const toggleElement = document.querySelector('.js-toggle-button');
+          if (!toggleElement.classList.contains('is-toggled')) {  
+            toggleElement.classList.add('is-toggled');
+          } else {
+            toggleElement.classList.remove('is-toggled');
+          }
+        }
+      </script>
+    </body>
+</html>

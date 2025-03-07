@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Array Exercises</title>   
+    </head>
+    <body>
+
+      <script>
+        // const stringArray = ['green', 'red', 'blue', 'red'];
+
+        // function findIndex(array, word) {
+        //   let index = -1;
+          
+        //   for (let i = 0; i < array.length; i++) {
+        //     if(array[i] === word) {
+        //       index = i;
+        //       return index;
+        //     }
+        //   }
+        //   return index;
+        // }
+
+        // console.log(findIndex(stringArray, 'red'));
+        // console.log(findIndex(stringArray, 'yellow'));
+
+        // const foods = ['egg', 'apple', 'egg', 'egg', 'ham'];
+
+        // function removeEgg(foods) {
+        //   const foodCopy = foods.slice();
+        //   const reversedFoods = foodCopy.reverse();
+        //   const result = [];
+        //   let eggsRemoved = 0;
+
+        //   for(let i = 0; i < reversedFoods.length; i++) {
+        //     if (reversedFoods[i] === 'egg' && eggsRemoved < 2) {
+        //       eggsRemoved++;
+        //       continue;
+        //     }
+        //     result.push(reversedFoods[i]);
+        //   }
+        //   return result.reverse();
+        // }
+
+        // console.log(removeEgg(foods));
+
+        function FizzBuzz() {
+          for(let i = 1; i <= 20; i++) {
+            if(i % 3 === 0 && i % 5 === 0) {
+              console.log('FizzBuzz');
+            } else if (i % 3 === 0) {
+              console.log('Fizz');
+            } else if (i % 5 === 0) {
+              console.log('Buzz');
+            } else {
+              console.log(i);
+            }
+          }
+        }
+
+        FizzBuzz();
+      </script>
+    </body>
+</html>

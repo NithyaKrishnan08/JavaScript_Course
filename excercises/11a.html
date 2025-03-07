@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Array Exercises</title>   
+    </head>
+    <body>
+
+      <script>
+        const numsArray = [10, 20, 30];
+        // numsArray[2] = 99;
+        // console.log(numsArray);
+
+        // function getLastValue(numsArray) {
+        //   return numsArray[numsArray.length - 1];
+        // }
+        // const lastValue = getLastValue(numsArray);
+        // console.log(lastValue);
+
+        // function getFirstValue(numsArray) {
+        //   return numsArray[0];
+        // }
+        // const firstValue = getFirstValue(numsArray);
+        // console.log(firstValue);
+
+        // function arraySwap(numsArray) {
+        //   const firstValue = getFirstValue(numsArray);
+        //   const lastValue = getLastValue(numsArray);
+        //   numsArray[0] = lastValue;
+        //   numsArray[numsArray.length - 1] = firstValue;
+        // }
+        // arraySwap(numsArray);
+        // console.log(numsArray);
+
+        // for(let i = 0; i <= 10; i+=2) {
+        //   console.log(i);
+        // }
+
+        // for(let i = 5; i >=0; i--) {
+        //   console.log(i);
+        // }
+
+        // let i = 0;
+        // while (i <= 10) {
+        //   console.log(i);
+        //   i += 2;
+        // }
+
+        // let j = 5;
+        // while (j >= 0) {
+        //   console.log(j);
+        //   j--;
+        // }
+
+        // let myArray = [1, 2, 3];
+        // for (let i = 0; i < myArray.length; i++) {
+        //   myArray[i] += 1;
+        // }
+        // console.log(myArray);
+
+        // function addOne(myArray) {
+        //   for (let i = 0; i < myArray.length; i++) {
+        //     myArray[i] += 1;
+        //   }
+        //   return myArray;
+        // }
+        // const result = addOne(myArray);
+        // console.log(result);
+
+        // let array = [1, 2, 3];
+        // function addNum(array, num) {
+        //   for (let i = 0; i < array.length; i++) {
+        //     array[i] += num;
+        //   }
+        //   return array;
+        // }
+        // const result1 = addNum(array, 3);
+        // console.log(result1);
+
+        // let array1 = [1, 2, 3];
+        // let array2 = [4, 5, 6];
+        
+
+        // if (array1.length !== array2.length) {
+        //   console.log('Array length not the same');
+        // }
+
+        // function resultArray(array1, array2) {
+        //   let array3 = [];
+        //   for (let i = 0; i < array1.length; i++) {
+        //     array3[i] = array1[i] + array2[i];
+        //   }
+        //   return array3;
+        // }
+        // const result2Arrays = resultArray(array1, array2);
+        // console.log(result2Arrays);
+
+        // let nums = [-9, -8, 6, 7, 8]
+        // function countPositive(nums) {
+        //   let count = 0;
+        //   for (let i = 0; i < nums.length; i++) {
+        //     if(nums[i] > 0)
+        //       count++;
+        //   }
+        //   return count;
+        // }
+        // const positiveNumbersCount = countPositive(nums);
+        // console.log(positiveNumbersCount)
+
+        // const nums = [3]
+        
+        // function minMax(nums) {
+        //   let minNumber = nums[0];
+        //   let maxNumber = nums[0];
+
+        //   if(nums.length === 0)
+        //     return {'min': null, 'max': null}
+
+        //   if (nums.length === 1)
+        //     return {'min': nums[0], 'max': nums[0]}
+
+        //   for (let i = 0; i < nums.length; i++) {
+        //     if (nums[i] < minNumber) {
+        //       minNumber = nums[i];
+        //     }
+        //   }
+
+        //   for (let i = 0; i < nums.length; i++) {
+        //     if (nums[i] > maxNumber) {
+        //       maxNumber = nums[i];
+        //     }
+        //   }
+
+        //   return {'min': minNumber, 'max': maxNumber}
+        // }
+
+        // const result = minMax(nums);
+        // console.log(result);
+
+        const words = ['apple', 'grape', 'apple', 'apple'];
+        function countWords(words) {
+          const result = {};
+
+          for(let i = 0; i < words.length; i++) {
+            const word = words[i];
+            if(!result[word]) {
+              result[word] = 1;
+            } else {
+              result[word]++;
+            }
+          }
+
+          return result;
+        }
+
+        const result = countWords(words);
+        console.log(result);
+
+      </script>
+    </body>
+</html>
