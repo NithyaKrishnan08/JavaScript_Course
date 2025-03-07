@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rock Paper Scissors</title>   
+    </head>
+    <body>
+      <p>Rock Paper Scissors</p>
+      <button onclick="clickedRock()">
+        Rock
+      </button>
+      <button onclick="clickedPaper()">
+        Paper
+      </button>
+      <button onclick="clickedScissors()">
+        Scissors
+      </button>
+
+      <script>
+        function getComputerChoice() {
+          const choices = ['rock', 'paper', 'scissors'];
+          const randomIndex = Math.floor(Math.random() * choices.length); 
+          return choices[randomIndex];
+        }
+        
+        function determineWinner(userChoice, computerChoice) {
+          console.log(`User choice: ${userChoice}`);
+          console.log(`Computer choice: ${computerChoice}`);
+
+          if (userChoice === computerChoice) {
+            console.log('Tie');
+            alert(`User choice: ${userChoice}; Computer choice: ${computerChoice}; Tie`);
+          } else if ((userChoice === 'rock' && computerChoice === 'scissors') || (userChoice === 'paper' && computerChoice === 'rock') || (userChoice === 'scissors' && computerChoice === 'paper')) {
+            console.log('User wins');
+            alert(`User choice: ${userChoice}; Computer choice: ${computerChoice}; You win`);
+          } else {
+            console.log('Computer wins');
+            alert(`User choice: ${userChoice}; Computer choice: ${computerChoice}; Computer wins`);
+          }
+        }
+
+        function clickedRock() {
+          const userChoice = 'rock';
+          const computerChoice = getComputerChoice();
+          determineWinner(userChoice, computerChoice);
+        }
+
+        function clickedPaper() {
+          const userChoice = 'paper';
+          const computerChoice = getComputerChoice();
+          determineWinner(userChoice, computerChoice);
+        }
+
+        function clickedScissors() {
+          const userChoice = 'scissors';
+          const computerChoice = getComputerChoice();
+          determineWinner(userChoice, computerChoice);
+        }
+
+      </script>
+    </body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rock Paper Scissors</title>   
+    </head>
+    <body>
+      <p>Rock Paper Scissors</p>
+      <button onclick="clickedRock()">
+        Rock
+      </button>
+      <button onclick="clickedPaper()">
+        Paper
+      </button>
+      <button onclick="clickedScissors()">
+        Scissors
+      </button>
+      <button onclick="clickedReset()">
+        Reset Score
+      </button>
+
+      <script>
+        let score = JSON.parse(localStorage.getItem('score')) || {
+          wins: 0,
+          losses: 0,
+          ties: 0
+        };
+
+        function getComputerChoice() {
+          const choices = ['rock', 'paper', 'scissors'];
+          const randomIndex = Math.floor(Math.random() * choices.length); 
+          return choices[randomIndex];
+        }
+        
+        function determineWinner(userChoice, computerChoice) {
+          if (userChoice === computerChoice) {
+            score.ties++;
+            alert(`User choice: ${userChoice}; Computer choice: ${computerChoice}; Tie; Score: ${score.wins} wins, ${score.losses} losses, ${score.ties} ties`);
+          } else if ((userChoice === 'rock' && computerChoice === 'scissors') || (userChoice === 'paper' && computerChoice === 'rock') || (userChoice === 'scissors' && computerChoice === 'paper')) {
+            score.wins++;
+            alert(`User choice: ${userChoice}; Computer choice: ${computerChoice}; You win; Score: ${score.wins} wins, ${score.losses} losses, ${score.ties} ties`);
+          } else {
+            score.losses++;
+            alert(`User choice: ${userChoice}; Computer choice: ${computerChoice}; Computer wins; Score: ${score.wins} wins, ${score.losses} losses, ${score.ties} ties`);
+          }
+
+          localStorage.setItem('score', JSON.stringify(score));
+        }
+
+        function clickedRock() {
+          const userChoice = 'rock';
+          const computerChoice = getComputerChoice();
+          determineWinner(userChoice, computerChoice);
+        }
+
+        function clickedPaper() {
+          const userChoice = 'paper';
+          const computerChoice = getComputerChoice();
+          determineWinner(userChoice, computerChoice);
+        }
+
+        function clickedScissors() {
+          const userChoice = 'scissors';
+          const computerChoice = getComputerChoice();
+          determineWinner(userChoice, computerChoice);
+        }
+
+        function clickedReset() {
+          score.wins = 0;
+          score.losses = 0;
+          score.ties = 0;
+          localStorage.removeItem('score');
+          alert('Score reset');
+        }
+
+      </script>
+    </body>
+</html>

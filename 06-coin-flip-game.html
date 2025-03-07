@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <p>
+      <button onclick="clickedHeads()">
+        heads
+      </button>
+
+      <button onclick="clickedTails()">
+        tails
+      </button>
+    </p>
+    <p class="js-side-chosen"></p>
+    <script>
+      let score = JSON.parse(localStorage.getItem('score')) || {
+        wins: 0,
+        losses: 0
+      };
+
+      function getComputerChoice() {
+        const randomNumber = Math.random();
+        return randomNumber < 0.5 ? 'heads' : 'tails';
+      }
+
+      function determineWinner(userGuess, computerChoice) {
+        const result = userGuess === computerChoice ? 'You win' : 'You lose';
+        console.log(`User guess: ${userGuess}; Computer choice: ${computerChoice}; Result: ${result}
+        Score: ${score.wins} wins, ${score.losses} losses`);
+        if (result === 'You win') {
+          score.wins++;
+        } else {
+          score.losses++;
+        }
+        localStorage.setItem('score', JSON.stringify(score));
+        return result;
+      }
+
+      function clickedHeads() {
+        const userGuess = 'heads';
+        const computerChoice = getComputerChoice();
+        document.querySelector('.js-side-chosen').innerHTML = `You chose: ${userGuess}`;
+        const result = determineWinner(userGuess, computerChoice);
+        console.log(result);
+      }
+
+      function clickedTails() {
+        const userGuess = 'tails';
+        const computerChoice = getComputerChoice();
+        document.querySelector('.js-side-chosen').innerHTML = `You chose: ${userGuess}`;
+        const result = determineWinner(userGuess, computerChoice);
+        console.log(result);
+      }
+    </script>
+  </body>
+</html>

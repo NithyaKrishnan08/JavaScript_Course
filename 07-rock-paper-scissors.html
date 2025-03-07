@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rock Paper Scissors</title>   
+    </head>
+    <body>
+      <p>Rock Paper Scissors</p>
+      <button onclick="clickedRock()">
+        Rock
+      </button>
+      <button onclick="clickedPaper()">
+        Paper
+      </button>
+      <button onclick="clickedScissors()">
+        Scissors
+      </button>
+
+      <script>
+        function getComputerChoice() {
+          const choices = ['rock', 'paper', 'scissors'];
+          const randomIndex = Math.floor(Math.random() * choices.length); 
+          return choices[randomIndex];
+        }
+        
+        function determineWinner(userChoice, computerChoice) {
+          if (userChoice === computerChoice) {
+            alert(`User choice: ${userChoice}; Computer choice: ${computerChoice}; Tie`);
+          } else if ((userChoice === 'rock' && computerChoice === 'scissors') || (userChoice === 'paper' && computerChoice === 'rock') || (userChoice === 'scissors' && computerChoice === 'paper')) {
+            alert(`User choice: ${userChoice}; Computer choice: ${computerChoice}; You win`);
+          } else {
+            alert(`User choice: ${userChoice}; Computer choice: ${computerChoice}; Computer wins`);
+          }
+        }
+
+        function clickedRock() {
+          const userChoice = 'rock';
+          const computerChoice = getComputerChoice();
+          determineWinner(userChoice, computerChoice);
+        }
+
+        function clickedPaper() {
+          const userChoice = 'paper';
+          const computerChoice = getComputerChoice();
+          determineWinner(userChoice, computerChoice);
+        }
+
+        function clickedScissors() {
+          const userChoice = 'scissors';
+          const computerChoice = getComputerChoice();
+          determineWinner(userChoice, computerChoice);
+        }
+
+      </script>
+    </body>
+</html>
